@@ -1,0 +1,62 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>지에이치 다이렉트</title><link rel="icon" href="/favicon.png"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<!--
+  GitHub Pages는 없는 주소를 이 파일로 보여 준다.
+  /o/<오더번호> = 카카오 알림톡 '새 오더 알림'의 [오더 보기] 버튼(결정 111, 2026-11-19).
+  앱이 있으면 차주 앱의 그 오더 상세(ghdirectdriver://driver/order/<오더>)로 보내고, 없으면 설치 안내를 보여 준다.
+  그 밖의 없는 주소는 '페이지를 찾을 수 없습니다'.
+-->
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:'IBM Plex Sans KR','Malgun Gothic',sans-serif;color:#111923;background:#F4F6F9;word-break:keep-all;line-height:1.6}
+.w{max-width:480px;margin:0 auto;padding:24px 16px 48px}
+.top{display:flex;align-items:center;gap:10px;text-decoration:none;color:#00427F;font-weight:700;white-space:nowrap}.top img{width:36px}
+.card{background:#fff;border:1px solid #DCE2EA;border-radius:16px;padding:22px 18px;margin-top:22px}
+h1{font-size:21px;margin:0 0 6px}
+p{margin:0;color:#3b4654;font-size:15px}
+.btn{display:block;text-align:center;background:#00427F;color:#fff;text-decoration:none;font-weight:700;font-size:16px;border-radius:12px;padding:15px;margin-top:18px}
+.btn2{display:block;text-align:center;background:#fff;color:#00427F;border:1px solid #DCE2EA;text-decoration:none;font-weight:700;font-size:15px;border-radius:12px;padding:13px;margin-top:10px}
+.box{background:#E6EEF6;border-radius:12px;padding:14px;margin-top:18px;font-size:13.5px;color:#3b4654}
+.box b{color:#00427F}
+.sub{font-size:12.5px;color:#6a7584;margin-top:10px}
+footer{margin-top:28px;font-size:12px;color:#6a7584}
+.hide{display:none}
+</style></head><body><div class="w">
+<a class="top" href="/"><img src="/gh-mark.png" alt="">지에이치 다이렉트</a>
+
+<div id="order" class="card hide">
+  <h1>오더를 앱에서 엽니다</h1>
+  <p>GH 다이렉트 차주 앱이 있으면 이 오더 화면으로 바로 이동해요.</p>
+  <a id="open" class="btn" href="#">차주 앱에서 오더 보기</a>
+  <div class="box"><b>앱이 열리지 않나요?</b><br>차주 앱이 설치되어 있지 않으면 열리지 않아요. 앱을 설치하고 로그인하면 첫 화면에서 가까운 오더를 볼 수 있어요.</div>
+  <a class="btn2" href="https://play.google.com/store/apps/details?id=kr.ghdirect.driver">Play 스토어에서 차주 앱 보기</a>
+  <div class="sub">이미 다른 차주가 수락한 오더는 보이지 않을 수 있어요.</div>
+</div>
+
+<div id="nf" class="card hide">
+  <h1>페이지를 찾을 수 없습니다</h1>
+  <p>주소가 바뀌었거나 없는 페이지예요.</p>
+  <a class="btn" href="/">처음으로</a>
+</div>
+
+<footer>지에이치트레이딩 · 고객센터 010-7759-1379 · gh@ghlogis.co.kr</footer>
+</div>
+<script>
+(function () {
+  var m = location.pathname.match(/^\/o\/([A-Za-z0-9_-]{1,64})\/?$/);
+  if (!m) { document.getElementById('nf').classList.remove('hide'); return; }
+  var id = m[1];
+  var path = 'driver/order/' + encodeURIComponent(id);
+  var android = /Android/i.test(navigator.userAgent);
+  // 안드로이드: intent 주소(앱이 없으면 스토어 대신 이 페이지로 돌아옴 ?stay=1), 그 밖: 앱 주소
+  var url = android
+    ? 'intent://' + path + '#Intent;scheme=ghdirectdriver;package=kr.ghdirect.driver;S.browser_fallback_url=' +
+      encodeURIComponent(location.origin + location.pathname + '?stay=1') + ';end'
+    : 'ghdirectdriver://' + path;
+  document.title = '오더 보기 · 지에이치 다이렉트';
+  document.getElementById('open').href = url;
+  document.getElementById('order').classList.remove('hide');
+  // 알림톡에서 눌러 들어오면 한 번 자동으로 앱을 연다
+  if (!/[?&]stay=1/.test(location.search)) setTimeout(function () { location.href = url; }, 300);
+})();
+</script>
+</body></html>
