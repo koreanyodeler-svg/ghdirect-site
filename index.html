@@ -92,6 +92,76 @@ footer .links{margin-bottom:8px}footer .links a{color:#25303d;margin-right:16px;
  .steps{grid-template-columns:1fr 1fr}.step:nth-child(3){border-left:0}.step:nth-child(n+3){border-top:1px solid var(--l)}
  section{padding:60px 0}.wrap{padding:0 18px}footer{margin-top:60px}
 }
+
+/* 운임 방식 소개(시안 20261121_소개페이지_운임방식소개_v02, 사용자 2026-11-21) */
+#how h2{font-size:34px}#how h2 em{font-style:normal;color:var(--b)}#how .center{text-align:center}#how .lead{margin:0 auto;max-width:720px}
+
+/* 핵심 3원칙 */
+.hw-pr{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}
+
+.hw-pr div{border:1px solid var(--l);border-radius:16px;padding:20px 20px;background:#fff}
+
+.hw-pr .hw-n{font-size:12px;font-weight:700;color:var(--o);letter-spacing:.08em}
+
+.hw-pr b{display:block;font-size:18px;margin:6px 0 4px}
+.hw-pr span{font-size:14.5px;color:var(--s)}
+
+/* 흐름 */
+.hw-flow{margin-top:40px;border:1px solid var(--l);border-radius:22px;overflow:hidden}
+
+.hw-lane{display:grid;grid-template-columns:120px repeat(4,1fr);align-items:stretch}
+
+.hw-lane+.hw-lane{border-top:1px dashed var(--b2)}
+
+.hw-who{display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;background:var(--b1);color:var(--b)}
+
+.hw-lane.hw-drv .hw-who{background:#fff7ee;color:#b45a05}
+
+.hw-cell{padding:18px 14px;position:relative}
+
+.hw-box{border-radius:12px;padding:12px 12px;font-size:14px;line-height:1.5;border:1.5px solid var(--b2);background:#fff}
+
+.hw-box b{display:block;font-size:15px;margin-bottom:2px}
+
+.hw-box.hw-s{border-color:var(--b);}
+.hw-box.hw-d{border-color:#f3c48f}
+
+.hw-box.hw-ok{background:#e9f7f0;border-color:#9fd6bb}
+.hw-box.hw-ok b{color:var(--g)}
+
+.hw-box.hw-end{background:#f5f6f8;border-color:#dfe3e8;color:var(--m)}
+
+.hw-step{font-size:11.5px;font-weight:700;color:var(--m);letter-spacing:.06em;margin-bottom:6px}
+
+.hw-arrow{position:absolute;right:-9px;top:50%;width:18px;height:18px;transform:translateY(-50%);z-index:1}
+
+.hw-arrow:after{content:'';position:absolute;left:3px;top:4px;border-left:9px solid #9db6cf;border-top:5px solid transparent;border-bottom:5px solid transparent}
+
+.hw-small{font-size:12.5px;color:var(--m);margin-top:6px}
+
+/* 표 */
+#how table{width:100%;border-collapse:separate;border-spacing:0;margin-top:34px;border:1px solid var(--l);border-radius:16px;overflow:hidden;font-size:15px}#how th,#how td{padding:14px 16px;text-align:left;border-top:1px solid var(--l);vertical-align:top}#how thead th{background:var(--b1);color:var(--b);border-top:0;font-size:14px}#how td:first-child{font-weight:700;width:150px;white-space:nowrap}
+
+.hw-tg{display:inline-block;font-size:12px;font-weight:700;padding:2px 8px;border-radius:6px;margin-right:6px}
+
+.hw-tg.hw-s{background:var(--b1);color:var(--b)}
+.hw-tg.hw-d{background:#fff1e2;color:#b45a05}
+
+/* 결론 띠 */
+.hw-punch{margin-top:34px;background:var(--b9);color:#fff;border-radius:20px;padding:40px 34px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px}
+
+.hw-punch b{font-size:25px;line-height:1.5;letter-spacing:-.01em}
+.hw-punch b em{font-style:normal;color:#FFB45E}
+
+.hw-punch span{font-size:14.5px;color:#c9d7e6}
+@media(max-width:760px){
+ #how h2{font-size:25px}#how .lead{font-size:15.5px}
+ /* 휴대폰: 두 줄 흐름도 대신 아래 단계 표로 본다 */
+ .hw-flow{display:none}
+ .hw-pr{grid-template-columns:1fr}
+ .hw-lane{grid-template-columns:1fr}.hw-who{padding:10px}.hw-cell{padding:10px 14px}.hw-arrow{display:none}#how td:first-child{width:auto;white-space:normal}#how th,#how td{padding:12px}
+ .hw-punch{padding:28px 20px}.hw-punch b{font-size:19px}
+}
 </style></head><body>
 <header><div class="wrap"><div class="logo"><img src="/gh-direct-mark.png" alt=""><img class="wm" src="/gh-direct-wordmark.png" alt="GH 다이렉트"></div>
 <nav class="nav"><a href="#about">서비스 소개</a><a href="#who">화주님</a><a href="#who">차주님</a><a href="#fee">수수료</a><a href="#faq">자주 묻는 질문</a><a class="cta-s" href="https://app.ghdirect.co.kr/join">가입하기</a></nav></div></header>
@@ -106,6 +176,46 @@ footer .links{margin-bottom:8px}footer .links a{color:#25303d;margin-right:16px;
  </div>
  <div class="video"><div class="play"><div class="tri"></div><p>소개 영상 준비 중</p></div></div>
 </div></div>
+<section id="how" class="how"><div class="wrap">
+ <div class="center">
+  <div class="eyebrow">HOW IT WORKS</div>
+  <h2>운임은 주선사가 아니라,<br><em>화주와 차주가 정합니다</em></h2>
+  <p class="lead">지에이치 다이렉트는 운임을 대신 정하지 않습니다. 화주가 운임을 정해 올리고, 차주는 수락하거나 제안합니다. 시장에 맡기는 새로운 방식입니다.</p>
+ </div>
+
+ <div class="hw-pr">
+  <div><span class="hw-n">01 · 참고 운임</span><b>노선별 추천 운임 안내</b><span>풍부한 실무 경험을 통해 쌓인 데이터로 화주님께 노선·차량별 참고 운임을 보여 드립니다.</span></div>
+  <div><span class="hw-n">02 · 운임 결정</span><b>운임은 화주가 정합니다</b><span>지에이치는 화주의 운임 결정에 관여하지 않습니다. 참고 운임을 보고 화주님이 직접 정해 올립니다.</span></div>
+  <div><span class="hw-n">03 · 협상</span><b>차주는 수락하거나 제안</b><span>그대로 수락하거나, 운임이 맞지 않으면 운임 제안으로 화주와 협상할 수 있습니다.</span></div>
+ </div>
+
+ <div class="hw-flow">
+  <div class="hw-lane hw-shp"><div class="hw-who">화주</div>
+   <div class="hw-cell"><div class="hw-step">1</div><div class="hw-box hw-s"><b>운임 정해 접수</b>참고 운임을 보고 직접 정해요</div><span class="hw-arrow"></span></div>
+   <div class="hw-cell"></div>
+   <div class="hw-cell"><div class="hw-step">3</div><div class="hw-box hw-s"><b>제안 받고 결정</b>수락 · 거절 · <u>다시 제안(1회)</u></div><span class="hw-arrow"></span></div>
+   <div class="hw-cell"></div>
+  </div>
+  <div class="hw-lane hw-drv"><div class="hw-who">차주</div>
+   <div class="hw-cell"></div>
+   <div class="hw-cell"><div class="hw-step">2</div><div class="hw-box hw-d"><b>수락 또는 운임 제안</b>여러 차주가 한 오더에 동시에 제안할 수 있어요</div><div class="hw-box hw-ok" style="margin-top:8px"><b>그대로 수락 → 바로 배차</b></div><span class="hw-arrow"></span></div>
+   <div class="hw-cell"></div>
+   <div class="hw-cell"><div class="hw-step">4</div><div class="hw-box hw-ok"><b>다시 제안 수락 → 배차</b></div><div class="hw-box hw-end" style="margin-top:8px"><b>거절 → 협상 종료</b></div></div>
+  </div>
+ </div>
+
+ <table>
+  <thead><tr><th>단계</th><th>할 수 있는 것</th></tr></thead>
+  <tbody>
+   <tr><td><span class="hw-tg hw-s">화주</span>접수</td><td>참고 운임을 보고 운임·작업비를 직접 정해 올립니다. 급하면 운임을 올릴 수 있어요.</td></tr>
+   <tr><td><span class="hw-tg hw-d">차주</span>응답</td><td><b>그대로 수락</b>하면 바로 배차됩니다. 맞지 않으면 <b>운임 제안</b>(화주 운임보다 높게)으로 협상을 시작합니다. 한 오더에 여러 차주가 제안할 수 있어요.</td></tr>
+   <tr><td><span class="hw-tg hw-s">화주</span>결정</td><td>차주의 제안을 <b>수락</b>하면 배차, <b>거절</b>하거나 차주별로 <b>한 번 다시 제안</b>할 수 있습니다.</td></tr>
+   <tr><td><span class="hw-tg hw-d">차주</span>마무리</td><td>화주의 다시 제안을 <b>수락하면 배차</b>, <b>거절하면 협상이 끝납니다.</b></td></tr>
+  </tbody>
+ </table>
+
+ <div class="hw-punch"><b>누구도 운임을 대신 정하지 않습니다.<br>화주의 제안과 차주의 응답이 만나는 곳, <em>운임은 시장이 정합니다.</em></b><span>투명한 운임이 오가는 화물 시장, 지에이치 다이렉트가 그 길을 엽니다.</span></div>
+</div></section>
 <div class="strip"><div class="wrap">
  <div><b>수수료 공개</b><span>얼마인지 미리 확인</span></div>
  <div><b>직접 지급</b><span>운임은 화주 → 차주</span></div>
