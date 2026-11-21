@@ -1,4 +1,4 @@
-:root{--b:#00427F;--b9:#082a4d;--b1:#f1f6fb;--b2:#d9e6f3;--t:#111923;--s:#3b4654;--m:#6a7584;--l:#e8ecf1;--o:#EE7708}
+:root{--b:#E36A00;--b9:#2B2622;--b1:#FFF4EA;--b2:#F8D7B4;--t:#111923;--s:#3b4654;--m:#6a7584;--l:#e8ecf1;--o:#EE7708}
 *{box-sizing:border-box}body{margin:0;font-family:'IBM Plex Sans KR','Malgun Gothic',sans-serif;color:var(--t);background:#fff;word-break:keep-all;line-height:1.65;-webkit-font-smoothing:antialiased}
 .wrap{max-width:760px;margin:0 auto;padding:0 20px}
 header{border-bottom:1px solid var(--l)}header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
