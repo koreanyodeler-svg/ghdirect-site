@@ -204,4 +204,9 @@ footer .links{margin-bottom:8px}footer .links a{color:#25303d;margin-right:16px;
  지에이치트레이딩 · 대표 윤길훈 · 사업자등록번호 865-03-00048 · 화물자동차 운송주선사업 허가 계양-4-284 · 통신판매업 신고 제2017-인천계양-0446호<br>
  인천광역시 계양구 장제로 719-17, 4층 · 고객센터 010-7759-1379 · gh@ghlogis.co.kr
 </div></footer>
+<script>
+/* 유입 꼬리표(2026-11-21): 다이렉트 웹으로 가는 버튼에 ?src= 를 붙인다 — 들어올 때 꼬리표가 있으면 그대로, 없으면 site */
+(function(){try{var s=(new URLSearchParams(location.search).get('src')||'').toLowerCase();if(!/^[a-z0-9_]{1,40}$/.test(s))s='site';
+document.querySelectorAll('a[href^="https://app.ghdirect.co.kr"]').forEach(function(a){var u=new URL(a.href);if(!u.searchParams.get('src')){u.searchParams.set('src',s);a.href=u.toString();}});}catch(e){}})();
+</script>
 </body></html>
