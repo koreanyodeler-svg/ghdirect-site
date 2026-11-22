@@ -34,7 +34,10 @@ section{padding:70px 0}
 .quote .ph{width:96px;height:96px;border-radius:50%;background:#fff;flex-shrink:0;display:flex;align-items:center;justify-content:center}
 .quote .ph img{width:62px}
 .quote p{font-size:22px;line-height:1.55;margin:0 0 10px;font-weight:600}.quote p em{font-style:normal;color:#FFB45E}
-.quote small{color:#cfc6bd;font-size:14px}
+.quote small{color:#cfc6bd;font-size:14px;grid-column:1/-1}
+.qs{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:10px 34px;align-items:start}
+.qs>div+div{border-left:1px solid #4a423b;padding-left:34px}
+.qs p{font-size:20px}
 .what{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}
 .what>div{border:1px solid var(--l);border-radius:16px;padding:22px;display:flex;gap:14px;background:#fff}
 .what i{width:42px;height:42px;border-radius:12px;background:var(--b1);color:var(--b);font-style:normal;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
@@ -52,12 +55,13 @@ footer .links{margin-bottom:8px}footer .links a{color:#25303d;margin-right:16px;
  .nav a:not(.cta-s){display:none}
  h1{font-size:30px}h2{font-size:24px}.hero{padding:44px 0 40px}section{padding:48px 0}.wrap{padding:0 18px}
  .facts,.why,.what{grid-template-columns:1fr}
- .quote{flex-direction:column;align-items:flex-start;padding:28px 24px}.quote p{font-size:18px}
+ .quote{flex-direction:column;align-items:flex-start;padding:28px 24px}.quote p,.qs p{font-size:18px}
+ .qs{grid-template-columns:1fr}.qs br{display:none}.qs>div+div{border-left:0;padding-left:0;border-top:1px solid #4a423b;padding-top:14px}
  td:first-child{width:110px}td{padding:12px}.final .btns{flex-direction:column}footer{margin-top:56px}
 }
 </style></head><body>
 <header><div class="wrap"><a class="logo" href="/" aria-label="GH 다이렉트 홈"><img src="/gh-direct-mark.png" alt=""><img class="wm" src="/gh-direct-wordmark.png" alt="GH 다이렉트"></a>
-<nav class="nav"><a href="/">서비스 소개</a><a href="/beta/driver/">베타 테스터</a><a class="on" href="/about/">회사 소개</a><a class="cta-s" href="https://app.ghdirect.co.kr/join">가입하기</a></nav></div></header>
+<nav class="nav"><a class="on" href="/about/">회사 소개</a><a href="/">서비스 소개</a><a href="/beta/driver/">베타 테스터</a><a class="cta-s" href="https://app.ghdirect.co.kr/join">가입하기</a></nav></div></header>
 
 <div class="hero"><div class="wrap">
  <div class="eyebrow">ABOUT · 운영사 소개</div>
@@ -80,7 +84,11 @@ footer .links{margin-bottom:8px}footer .links a{color:#25303d;margin-right:16px;
  </div>
  <div class="quote">
   <div class="ph"><img src="/gh-direct-mark.png" alt=""></div>
-  <div><p>"화주님은 <em>덜 내고</em>, 차주님은 <em>더 받을 수 있는</em><br>운송을 만들고 싶었습니다."</p><small>지에이치트레이딩 대표 윤길훈</small></div>
+  <div class="qs">
+   <div><p>"화주님은 <em>덜 내고</em>, 차주님은 <em>더 받을 수 있는</em> <br>운송을 만들고 싶었습니다."</p></div>
+   <div><p>"운임은 누구도 대신 정하지 않습니다. <br>저희는 그 만남이 <em>안전하도록</em> 곁에서 돕겠습니다."</p></div>
+   <small>지에이치트레이딩</small>
+  </div>
  </div>
 </div></section>
 
@@ -105,7 +113,7 @@ footer .links{margin-bottom:8px}footer .links a{color:#25303d;margin-right:16px;
   <tr><td>화물운송주선사업 허가</td><td>계양-4-284</td></tr>
   <tr><td>통신판매업 신고</td><td>제2017-인천계양-0446호</td></tr>
   <tr><td>주소</td><td>인천광역시 계양구 장제로 719-17, 4층</td></tr>
-  <tr><td>고객센터</td><td><a href="tel:010-7759-1379">010-7759-1379</a> · gh@ghlogis.co.kr</td></tr>
+  <tr><td>고객센터</td><td><a href="tel:1661-1971">1661-1971</a> · gh@ghlogis.co.kr</td></tr>
   <tr><td>지에이치 홈페이지</td><td><a href="https://ghlogis.co.kr" target="_blank" rel="noopener">ghlogis.co.kr</a></td></tr>
  </table>
  <div class="final"><h3>출시 전에 미리 가입해 두세요</h3><p>2027년 1월 출시 · 12월 베타 테스터 모집</p>
@@ -115,7 +123,7 @@ footer .links{margin-bottom:8px}footer .links a{color:#25303d;margin-right:16px;
 <footer><div class="wrap">
  <div class="links"><a href="/about/">회사 소개</a><a href="/terms/">이용약관</a><a href="/privacy/">개인정보처리방침</a><a href="/location/">위치기반서비스 이용약관</a><a href="/account/delete/">계정 삭제 요청</a></div>
  지에이치트레이딩 · 대표 윤길훈 · 사업자등록번호 865-03-00048 · 화물자동차 운송주선사업 허가 계양-4-284 · 통신판매업 신고 제2017-인천계양-0446호<br>
- 인천광역시 계양구 장제로 719-17, 4층 · 고객센터 010-7759-1379 · gh@ghlogis.co.kr
+ 인천광역시 계양구 장제로 719-17, 4층 · 고객센터 1661-1971 · gh@ghlogis.co.kr
 </div></footer>
 <script>
 /* 유입 꼬리표: 다이렉트 웹으로 가는 버튼에 ?src= 를 붙인다 — 들어올 때 꼬리표가 있으면 그대로, 없으면 site */
