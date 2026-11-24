@@ -209,6 +209,11 @@ footer .links{margin-bottom:8px}footer .links a{color:#25303d;margin-right:16px;
 .wgo{display:block;text-align:center;border-radius:10px;padding:10px;font-weight:800;color:#fff;background:#E36A00}
 .wcard.d .wgo{background:#2B2622}
 @media (max-width:640px){.who2{grid-template-columns:1fr;max-width:none;margin-top:20px}}
+/* 차주용 광고로 온 사람(관리자 유입 링크 대상 = 차주): 차주 카드 먼저·강조, 화주 카드 흐리게(시안 20261125_홈페이지_당근유입_v02 ②) */
+.v-drv{display:none}html.drv .v-all{display:none}html.drv h1.v-drv,html.drv p.v-drv{display:block}html.drv li.v-drv{display:list-item}html.drv .rib.v-drv{display:inline-block}
+.wcard{position:relative}.rib{position:absolute;top:-12px;left:10px;max-width:calc(100% - 20px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;box-sizing:border-box;background:#E36A00;color:#fff;font-size:12px;font-weight:800;border-radius:999px;padding:3px 10px}html.drv .wcard.d{padding-top:20px}
+html.drv .wcard.d{order:-1;border-color:#E36A00;box-shadow:0 0 0 4px #E36A0033}html.drv .wcard.d .wgo{background:#E36A00}
+html.drv .wcard.s{opacity:.6}html.drv .who2{margin-top:30px}
 </style></head><body>
 <header><div class="wrap"><a class="logo" href="/" aria-label="GH 다이렉트 홈"><img src="/gh-direct-mark.png" alt=""><img class="wm" src="/gh-direct-wordmark.png" alt="GH 다이렉트"></a>
 <nav class="nav"><a class="m-about cta-s" href="/about/">회사 소개</a><a href="#about">서비스 소개</a><a href="#who">화주님</a><a href="#who">차주님</a><a href="#fee">수수료</a><a href="#faq">자주 묻는 질문</a></nav></div></header>
@@ -216,16 +221,18 @@ footer .links{margin-bottom:8px}footer .links a{color:#25303d;margin-right:16px;
 <div class="hero"><div class="wrap">
  <div>
   <span class="pill"><i></i>2027년 1월 출시 · 12월 베타 테스터 모집</span>
-  <h1>화물 운송,<br>이제 <em>직접</em> 연결합니다.</h1>
-  <p class="bold-claim">운임은 이제 <em>화주가 정합니다.</em></p>
-  <p class="lead">지금까지 없던 파격적인 방식, 화주님이 직접 운임을 정해 오더를 올리고 차주와 바로 연결됩니다. 운임과 수수료는 처음부터 모두 보여 드립니다.</p>
+  <!-- 제목: '직접 연결'보다 '운임은 화주가 정하고 차주는 협상'(사장님 11/25, 시안 20261125_홈페이지_당근유입_v02). 차주용 광고로 오면 차주 쪽 제목(.drv) -->
+  <h1 class="v-all">운임은 <em>화주</em>가 정하고,<br>차주는 <em>협상</em>합니다.</h1>
+  <h1 class="v-drv">운임이 낮으면<br>차주님이 <em>협상</em>하세요.</h1>
+  <p class="lead v-all">보내는 분이 운임을 정해 올리면, 차주님은 그대로 수락하거나 금액을 제안해요. 운임과 수수료는 처음부터 모두 보여 드립니다.</p>
+  <p class="lead v-drv">화주가 정한 운임을 보고, 그대로 수락하거나 금액을 제안해요. 운임과 수수료는 처음부터 모두 보여 드립니다.</p>
   <!-- 화주·차주 시작하기 카드(시안 20261124_홈페이지_베타버튼_v02 B, 사장님 "B로 해") — 각 베타 안내 페이지로 -->
   <div class="who2">
-   <a class="wcard s" href="/beta/shipper/"><div class="wtop"><span class="wic">📦</span><span><b>화주님</b><small>화물을 보내는 분</small></span></div>
+   <a class="wcard s" href="/beta/shipper/" data-click="shipper"><div class="wtop"><span class="wic">📦</span><span><b>화주님</b><small>화물을 보내는 분</small></span></div>
     <ul><li>수수료 0원, 운임은 내가 정해요</li><li>지금: 운임 시세 조회 · 시험 오더</li><li>12월 14일부터 실제 접수</li></ul>
     <span class="wgo">화주로 시작하기 →</span></a>
-   <a class="wcard d" href="/beta/driver/"><div class="wtop"><span class="wic">🚚</span><span><b>차주님</b><small>화물차를 운전하는 분</small></span></div>
-    <ul><li>운임과 수수료가 처음부터 보여요</li><li>지금 앱 설치 · 가입·서류는 앱에서</li><li>베타 오더: 수도권 차고지 선착순 50명</li></ul>
+   <a class="wcard d" href="/beta/driver/" data-click="driver"><span class="rib v-drv">🚚 차주님은 여기로</span><div class="wtop"><span class="wic">🚚</span><span><b>차주님</b><small>화물차를 운전하는 분</small></span></div>
+    <ul><li class="v-drv">운임이 맞지 않으면 <b>금액 제안</b></li><li class="v-drv">선착불 오더만 · 베타 수수료 1%</li><li class="v-all">운임과 수수료가 처음부터 보여요</li><li class="v-all">지금 앱 설치 · 가입·서류는 앱에서</li><li>베타 오더: 수도권 차고지 선착순 50명</li></ul>
     <span class="wgo">차주로 시작하기 →</span></a>
   </div>
   <a class="chatimg chat-m" href="https://open.kakao.com/o/gNN7M4Xi" target="_blank" rel="noopener" aria-label="카카오톡 오픈채팅방 참여하기"><img src="/openchat-bar-m.png" alt="카카오톡 오픈채팅방 — 화주·차주 소식방 참여"></a>
@@ -374,6 +381,7 @@ footer .links{margin-bottom:8px}footer .links a{color:#25303d;margin-right:16px;
 <script>
 /* 유입 꼬리표(2026-11-21): 다이렉트 웹으로 가는 버튼에 ?src= 를 붙인다 — 들어올 때 꼬리표가 있으면 그대로, 없으면 site */
 (function(){try{var s=(new URLSearchParams(location.search).get('src')||'').toLowerCase();if(!/^[a-z0-9_]{1,40}$/.test(s))s='site';
-document.querySelectorAll('a[href^="https://app.ghdirect.co.kr"]').forEach(function(a){var u=new URL(a.href);if(!u.searchParams.get('src')){u.searchParams.set('src',s);a.href=u.toString();}});}catch(e){}})();
+document.querySelectorAll('a[href^="https://app.ghdirect.co.kr"],a[href^="/beta/"]').forEach(function(a){var u=new URL(a.href,location.href);if(!u.searchParams.get('src')){u.searchParams.set('src',s);a.href=u.toString();}});}catch(e){}})();
 </script>
+<script src="/site-track.js" data-page="/site"></script>
 </body></html>
